@@ -11,5 +11,17 @@
     <canvas id="myCanvas" style="border: 1px solid black;" width="750" height="500">
 
     </canvas>
+    <script id="vertexShaderCode" type="notjs">
+        attribute vec4 a_position;
+        void main() {
+            gl_Position = a_position;
+            gl_PointSize = 10.0;
+        }
+    </script>
+    <script id="fragmentShaderCode" type="notjs">
+        void main() {
+            gl_FragColor = vec4(0.0, 0.0, 1.0, 1.0);
+        }
+    </script>
 </body>
 </html>

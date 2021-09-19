@@ -1,23 +1,21 @@
 function main() {
-    var canvas = document.getElementById("myCanvas");
-    var gl = canvas.getContext("webgl");
+    /**
+    * @type {HTMLCanvasElement} canvas
+    */
+    const canvas = document.getElementById('myCanvas');
 
-    var vertexShaderCode = `
-        void main() {
-            gl_Position = vec4(0.0, 0.0, 0.0, 1.0);
-            gl_PointSize = 10.0;
-        }
-    `;
+    /**
+     * @type {WebGLRenderingContext} gl
+     */
+    const gl = canvas.getContext('webgl');
+
+    var vertexShaderCode = document.getElementById("vertexShaderCode").textContent;
 
     var vertexShader = gl.createShader(gl.VERTEX_SHADER);
     gl.shaderSource(vertexShader, vertexShaderCode);
     gl.compileShader(vertexShader);
 
-    var fragmentShaderCode = `
-        void main() {
-            gl_FragColor = vec4(0.0, 0.0, 1.0, 1.0);
-        }
-    `;
+    var fragmentShaderCode = document.getElementById("fragmentShaderCode").textContent;
 
     var fragmentShader = gl.createShader(gl.FRAGMENT_SHADER);
     gl.shaderSource(fragmentShader, fragmentShaderCode);
