@@ -10,9 +10,29 @@ function main(){
     const gl = canvas.getContext('webgl');
  
     var vertices = [
-        -0.5, 0.5, //titik A
-        -0.5, -0.5, //titik B
-        0.5, -0.5, //titik C
+        // balok kiri
+        -0.7, 0.7,
+        -0.7, -0.7,
+        -0.35, -0.7,
+        -0.35, -0.7,
+        -0.35, 0.7,
+        -0.7, 0.7,
+
+        // balok kanan
+        0.7, 0.7,
+        0.7, -0.7,
+        0.35, -0.7,
+        0.35, -0.7,
+        0.35, 0.7,
+        0.7, 0.7,
+
+        // balok miring
+        -0.7, 0.7,
+        0.35, -0.7,
+        0.7, -0.7,
+        0.7, -0.7,
+        -0.35, 0.7,
+        -0.7, 0.7,
     ];
 
     var positionBuffer = gl.createBuffer();
@@ -46,5 +66,5 @@ function main(){
     gl.clearColor(0.0, 0.0, 0.0, 1.0);
     gl.clear(gl.COLOR_BUFFER_BIT);
 
-    gl.drawArrays(gl.POINTS, 0, 3);
+    gl.drawArrays(gl.TRIANGLES, 0, 18);
  }
